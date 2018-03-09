@@ -2,7 +2,8 @@
 h2{
     text-align: center;
     font-family: cursive;
-    font-size: 24px; 
+    font-size: 24px;
+    border: 1px solid green;
 }
 /*Game background*/
 #bg{
@@ -18,23 +19,50 @@ h2{
 }
 /*Details*/
 #aside{
+    border: 3px solid black;
+    border-top-left-radius: 28px;
     text-align:justify;
     position: relative;
     height: 100vh;
-    width: 30%;
-    padding-left: 10px;
+    width: 33%;
+    padding-left: 4px;
 }
 #aside h3, #aside a{
     display: block;
     text-align: center;
 }
-#aside button{
+#aside h3{
+    font-family: monospace;
+    font-size: 26px;
+}
+.info{
+    overflow: hidden;
+}
+.info > img{
+    float: left;
+    display: inline-block; 
+}
+.info > span{
+    display: inline-block;
+    font-family:monospace;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+#numberp{
+    font-family:serif;
+    padding: 4px;
+    font-size: 20px;
+    margin: 8px 1px;
+}
+#play{
+    display: none;
     position: relative;
-    left: 20%;
+    left: 35%;
     padding: 7px 5px;
     font-size: 20px;
     margin-bottom: 8px;
-    
+
 }
 /* player to be shown*/
 .player1{
@@ -42,324 +70,284 @@ h2{
     background-repeat: no-repeat;
     background-position: center;
 }
+.player1:hover{
+    
+}
 .player2{
     background-image:url(../Image/User/user2.png);
     background-repeat: no-repeat;
     background-position: center;
 }
+.player2:hover{
+    
+}
+#dice1, #dice2, #dice3, #dice4, #dice5, #dice6{
+    display: none;
+}
+#showcase{
+    text-align: center;
+    padding: 5px 1px;
+}
+#moving_dice{
+    text-align: center;
+    display: none;
+}
 /* Position of div blocks*/
 /* to calculate position in same row 86*n + 3px gap*/
 /* to calculate position in same column 84*n+4px */
-#b1{
-    position: absolute;
-    top:84px;
-    left: 86px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-   
-}
-#b2{
-    position: absolute;
-    top:84px;
-    left: 175px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b3{
-    position: absolute;
-    top:84px;
-    left: 261px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b4{
-    position: absolute;
-    top:84px;
-    left: 350px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b5{
-    position: absolute;
-    top:84px;
-    left: 440px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b6{
-    position: absolute;
-    top:84px;
-    left: 529px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b7{
-    position: absolute;
-    top:172px;
-    left: 86px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-   
-}
-#b8{
-    position: absolute;
-    top:172px;
-    left: 175px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b9{
-    position: absolute;
-    top:172px;
-    left: 261px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b10{
-    position: absolute;
-    top:172px;
-    left: 350px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b11{
-    position: absolute;
-    top:172px;
-    left: 440px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b12{
-    position: absolute;
-    top:172px;
-    left: 529px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b13{
-    position: absolute;
-    top:260px;
-    left: 86px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-   
-}
-#b14{
-    position: absolute;
-    top:260px;
-    left: 175px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b15{
-    position: absolute;
-    top:260px;
-    left: 261px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b16{
-    position: absolute;
-    top:260px;
-    left: 350px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b17{
-    position: absolute;
-    top:260px;
-    left: 440px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b18{
-    position: absolute;
-    top:260px;
-    left: 529px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b19{
-    position: absolute;
-    top:348px;
-    left: 86px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-   
-}
-#b20{
-    position: absolute;
-    top:348px;
-    left: 175px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b21{
-    position: absolute;
-    top:348px;
-    left: 261px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b22{
-    position: absolute;
-    top:348px;
-    left: 350px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b23{
-    position: absolute;
-    top:348px;
-    left: 440px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b24{
-    position: absolute;
-    top:348px;
-    left: 529px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b25{
-    position: absolute;
-    top:436px;
-    left: 86px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-   
-}
-#b26{
-    position: absolute;
-    top:436px;
-    left: 175px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b27{
-    position: absolute;
-    top:436px;
-    left: 261px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-}
-#b28{
-    position: absolute;
-    top:436px;
-    left: 350px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b29{
-    position: absolute;
-    top:436px;
-    left: 440px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
-#b30{
-    position: absolute;
-    top:436px;
-    left: 529px;
-    min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
-}
 #b31{
     position: absolute;
-    top:524px;
+    top:84px;
     left: 86px;
     min-height: 84px;
     width: 86px;
-    border: 1px solid black;
-   
+    
 }
 #b32{
     position: absolute;
+    top:84px;
+    left: 175px;
+    min-height: 84px;
+    width: 86px;
+}
+#b33{
+    position: absolute;
+    top:84px;
+    left: 261px;
+    min-height: 84px;
+    width: 86px;
+}
+#b34{
+    position: absolute;
+    top:84px;
+    left: 350px;
+    min-height: 84px;
+    width: 86px;
+}
+#b35{
+    position: absolute;
+    top:84px;
+    left: 440px;
+    min-height: 84px;
+    width: 86px;
+}
+#b36{
+    position: absolute;
+    top:84px;
+    left: 529px;
+    min-height: 84px;
+    width: 86px;
+}
+#b25{
+    position: absolute;
+    top:172px;
+    left: 86px;
+    min-height: 84px;
+    width: 86px;
+}
+#b26{
+    position: absolute;
+    top:172px;
+    left: 175px;
+    min-height: 84px;
+    width: 86px;
+}
+#b27{
+    position: absolute;
+    top:172px;
+    left: 261px;
+    min-height: 84px;
+    width: 86px;
+}
+#b28{
+    position: absolute;
+    top:172px;
+    left: 350px;
+    min-height: 84px;
+    width: 86px;
+}
+#b29{
+    position: absolute;
+    top:172px;
+    left: 440px;
+    min-height: 84px;
+    width: 86px;
+}
+#b30{
+    position: absolute;
+    top:172px;
+    left: 529px;
+    min-height: 84px;
+    width: 86px;
+}
+#b19{
+    position: absolute;
+    top:260px;
+    left: 86px;
+    min-height: 84px;
+    width: 86px;
+}
+#b20{
+    position: absolute;
+    top:260px;
+    left: 175px;
+    min-height: 84px;
+    width: 86px;
+}
+#b21{
+    position: absolute;
+    top:260px;
+    left: 261px;
+    min-height: 84px;
+    width: 86px;
+}
+#b22{
+    position: absolute;
+    top:260px;
+    left: 350px;
+    min-height: 84px;
+    width: 86px;
+}
+#b23{
+    position: absolute;
+    top:260px;
+    left: 440px;
+    min-height: 84px;
+    width: 86px;
+}
+#b24{
+    position: absolute;
+    top:260px;
+    left: 529px;
+    min-height: 84px;
+    width: 86px;
+}
+#b13{
+    position: absolute;
+    top:348px;
+    left: 86px;
+    min-height: 84px;
+    width: 86px;
+}
+#b14{
+    position: absolute;
+    top:348px;
+    left: 175px;
+    min-height: 84px;
+    width: 86px;
+}
+#b15{
+    position: absolute;
+    top:348px;
+    left: 261px;
+    min-height: 84px;
+    width: 86px;
+}
+#b16{
+    position: absolute;
+    top:348px;
+    left: 350px;
+    min-height: 84px;
+    width: 86px;
+}
+#b17{
+    position: absolute;
+    top:348px;
+    left: 440px;
+    min-height: 84px;
+    width: 86px;
+}
+#b18{
+    position: absolute;
+    top:348px;
+    left: 529px;
+    min-height: 84px;
+    width: 86px;
+}
+#b12{
+    position: absolute;
+    top:436px;
+    left: 86px;
+    min-height: 84px;
+    width: 86px;
+}
+#b11{
+    position: absolute;
+    top:436px;
+    left: 175px;
+    min-height: 84px;
+    width: 86px;
+}
+#b10{
+    position: absolute;
+    top:436px;
+    left: 261px;
+    min-height: 84px;
+    width: 86px;
+}
+#b9{
+    position: absolute;
+    top:436px;
+    left: 350px;
+    min-height: 84px;
+    width: 86px;
+}
+#b8{
+    position: absolute;
+    top:436px;
+    left: 440px;
+    min-height: 84px;
+    width: 86px;
+}
+#b7{
+    position: absolute;
+    top:436px;
+    left: 529px;
+    min-height: 84px;
+    width: 86px;
+}
+#b1{
+    position: absolute;
+    top:524px;
+    left: 86px;
+    min-height: 84px;
+    width: 86px;
+}
+#b2{
+    position: absolute;
     top:524px;
     left: 175px;
     min-height: 84px;
     width: 86px;
-    border: 1px solid black;
 }
-#b33{
+#b3{
     position: absolute;
     top:524px;
     left: 261px;
     min-height: 84px;
     width: 86px;
-    border: 1px solid black;
 }
-#b34{
+#b4{
     position: absolute;
     top:524px;
     left: 350px;
     min-height: 84px;
     width: 86px;
-    border: 1px solid black;
-    background-image: none;
 }
-#b35{
+#b5{
     position: absolute;
     top:524px;
     left: 440px;
     min-height: 84px;
     width: 86px;
-    border: 1px solid black;
-    background-image: none;
 }
-#b36{
+#b6{
     position: absolute;
     top:524px;
     left: 529px;
     min-height: 84px;
-    width: 86px;
-    border: 1px solid black;
-    background-image: none;
+    width: 86px;    
 }
-#play{}
+.playhov{
+    
+}
