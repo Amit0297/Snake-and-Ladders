@@ -139,22 +139,65 @@ $(document).ready(function(){
         
         
     });
+    var count = 1;
     
             $("#main_dice").click(function(){
-            $("#moving_dice").show(2000);
-            $("#moving_dice").hide(4000);
-            var dice = Math.floor(Math.random()*6)+1;
-            var res = "#dice"+dice;
-            $(res).show(6000);
-            $(res).hide(7000);
-            dice_roll(dice, 1);
-            var dice = Math.floor(Math.random()*6)+1;
-            dice_roll(dice, 2);
-            toggle_dice();
-        
+                if($("#play2").is(':checked')){
+                    var dice_result= dice_no_generate();
+                    dice_roll(dice_result, count);
+                    
+                    if(count == 1)
+                        {
+                            $("#res1").show();
+                            $("#res1").html(dice_result);
+                         count=2;
+                         $("#res1").hide(8000);
+                        }
+                        
+                    else
+                        if(count ==2)
+                            {
+                                $("#res2").show();
+                                $("#res2").html(dice_result);
+                                count=2;
+                                $("#res2").hide(8000);
+                            }
+                    
+                    toggle_dice();
+                    toggle_players();
+                    $("#res1").html()
+                }
+                else
+                    if($("#play1").is(':checked')){
+                        var dice_result= dice_no_generate();
+                        dice_roll(dice_result, 1);
+                        toggle_dice();
+                        toggle_players();
+                        $("#res1").show();
+                        $("#res1").html(dice_result);
+                        $("#res1").hide(8000);
+                    
+                        dice_result = Math.floor(Math.random()*6)+1;
+                        dice_roll(dice_result, 2);
+                        toggle_players();
+                        $("#res2").show();
+                        $("#res2").html(dice_result);
+                        $("#res2").hide(8000);
+                        
+                }
+               
         });
+    
             
-            
+            function dice_no_generate(){
+                 $("#moving_dice").show(2000);
+                    $("#moving_dice").hide(4000);
+                    var dice = Math.floor(Math.random()*6)+1;
+                    var res = "#dice"+dice;
+                    $(res).show(6000);
+                    $(res).hide(7000);
+                return dice;
+            }
         
    
         
@@ -167,7 +210,7 @@ $(document).ready(function(){
     function toggle_dice()
     {
         setTimeout(disable_dice, 100);
-        setTimeout(enable_dice, 16000);
+        setTimeout(enable_dice, 11000);
     }
     function disable_dice()
     {
@@ -177,7 +220,14 @@ $(document).ready(function(){
     {
         $("#main_dice").removeAttr("disabled");
     }
-    
+    function toggle_players()
+    {
+        if($("#turn").html()== player1_name+"'s turn!")
+            $("#turn").html(player2_name+"'s turn!");
+        else
+            $("#turn").html(player1_name+"'s turn!");
+            
+    }
     
  
 });
