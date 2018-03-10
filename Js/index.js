@@ -1,10 +1,14 @@
 $(document).ready(function(){
+    var player1_name=prompt("Please Enter your name", "Player1");
+    var player2_name= "my Computer"
+    $("#p1").html(player1_name);
+    $("#p2").html(player2_name);
     var player1 = 1;
     var player2 = 1;
     var pos = "#b";
     var posp = "";
     var posn = "";
-    
+    $("#turn").html(player1_name+"'s turn!");
     function dice_roll(dice_no, plyno){
         var player = "player"+plyno;
         posp=pos+eval(player);
@@ -125,29 +129,55 @@ $(document).ready(function(){
         
     }
     $(".selector").click(function(){
-        if($(this).val() == 1)
+        if($(this).val() == 2)
             {
+                player2_name = prompt("Enter your Name","Player2");
+                $("#p2").html(player2_name);
                 //to hide radio button
-                $("#numberp").hide(2000);
-                
-                $("#main_dice").click(function(){
-                    $("#moving_dice").show(2000);
-                    $("#moving_dice").hide(4000);
-                    var dice = Math.floor(Math.random()*6)+1;
-                    var res = "#dice"+dice;
-                    $(res).show(6000);
-                    $(res).hide(7000);
-                    dice_roll(dice, 1);
-                   var dice = Math.floor(Math.random()*6)+1;
-                    dice_roll(dice, 2);
-                    
-                   
-                });
-                
             }
+                
         
         
     });
+    
+            $("#main_dice").click(function(){
+            $("#moving_dice").show(2000);
+            $("#moving_dice").hide(4000);
+            var dice = Math.floor(Math.random()*6)+1;
+            var res = "#dice"+dice;
+            $(res).show(6000);
+            $(res).hide(7000);
+            dice_roll(dice, 1);
+            var dice = Math.floor(Math.random()*6)+1;
+            dice_roll(dice, 2);
+            toggle_dice();
+        
+        });
+            
+            
+        
+   
+        
+        
+    setTimeout(hide_options, 10000);
+    function hide_options()
+    {
+        $("#numberp").hide(1500);
+    }
+    function toggle_dice()
+    {
+        setTimeout(disable_dice, 100);
+        setTimeout(enable_dice, 16000);
+    }
+    function disable_dice()
+    {
+        $("#main_dice").attr("disabled", "disabled");
+    }
+    function enable_dice()
+    {
+        $("#main_dice").removeAttr("disabled");
+    }
+    
     
  
 });
