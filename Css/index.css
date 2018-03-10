@@ -92,6 +92,20 @@ h2{
     text-align: center;
     display: none;
 }
+#dice_pic{
+    text-align: center;
+}
+#main_dice{
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#turn{
+    display: block;
+    text-align: center;
+    font-family: cursive;
+    font-size: 18px;
+}
 /* Position of div blocks*/
 /* to calculate position in same row 86*n + 3px gap*/
 /* to calculate position in same column 84*n+4px */
